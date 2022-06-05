@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Login from "../Components/login";
 import Home from "../Components/home";
 
@@ -13,8 +14,6 @@ import Stamp from "../Components/stamp";
 import Terms from "../Components/terms";
 
 import Privacy from "../Components/privacy";
-
-import React from "react";
 
 import Leave from "../Components/leave";
 

@@ -10,7 +10,10 @@ import { useNavigate } from "react-router-dom";
 
 import { UserContext } from "../App/App.js";
 
+import { connect, useDispatch, useSelector } from "react-redux";
+
 function Home() {
+  const { username } = useSelector((state) => state.app);
   let navigate = useNavigate;
   const [auth, setAuth] = useState(false);
 
@@ -19,10 +22,10 @@ function Home() {
   }
   return (
     <div>
-      <h5>Welcome Mithun,</h5>
-      <UserContext.Consumer>
-        {(username) => <div>{username}</div>}
-      </UserContext.Consumer>
+      <h5>Welcome {username},</h5>
+      {/* <UserContext.Consumer> */}
+      {(username) => <div>{username}</div>}
+      {/* </UserContext.Consumer> */}
       <Fetchhh />
 
       <button onClick={() => setAuth(true)}>Back</button>

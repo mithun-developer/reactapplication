@@ -4,6 +4,7 @@ function Leave() {
   const [data, setdata] = useState({
     leave: "",
   });
+  const [leavebalance, setLeaveBalance] = useState(10);
   const { leave } = data;
   const change = (e) => {
     setdata({
@@ -11,11 +12,13 @@ function Leave() {
     });
   };
 
-  let leavebalance = 10;
+  // let leavebalance = 10;
 
   const [val, setval] = useState();
   const apply = () => {
-    setval(leavebalance - Number(data.leave));
+    const newval = leavebalance - Number(data.leave);
+    setval(newval);
+    setLeaveBalance(newval);
   };
 
   const [oldleavebalance, setNewleavebalance] = useState();

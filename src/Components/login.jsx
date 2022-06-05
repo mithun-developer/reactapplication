@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { connect, useDispatch } from "react-redux";
 
 import { useNavigate, Link } from "react-router-dom";
+import { getuser } from "./action";
 
 function Login() {
+  const dispatch = useDispatch();
   const [data, setData] = useState({
     username: "",
     password: "",
@@ -80,7 +83,14 @@ function Login() {
           />{" "}
           <br />
           <br />
-          <button onClick={() => setAuth(true)}>Login</button>
+          <button
+            onClick={() => {
+              setAuth(true);
+              dispatch(getuser(username));
+            }}
+          >
+            Login
+          </button>
         </center>
       </form>
     </div>
