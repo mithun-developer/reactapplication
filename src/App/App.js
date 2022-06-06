@@ -16,6 +16,7 @@ import Terms from "../Components/terms";
 import Privacy from "../Components/privacy";
 
 import Leave from "../Components/leave";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

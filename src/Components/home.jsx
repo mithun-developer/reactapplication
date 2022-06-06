@@ -4,7 +4,7 @@ import axios from "axios";
 
 import { Link } from "react-router-dom";
 
-import logo from "../images/mithun.jpeg";
+//import logo from "../images/mithun.jpeg";
 
 import { useNavigate } from "react-router-dom";
 
@@ -45,7 +45,7 @@ export function Fetchhh() {
 
   return (
     <div>
-      <img src={logo} />
+      {/* <img src={logo} /> */}
       {data.map((value, id) => (
         <li key={value.id}>{value.title}</li>
       ))}
