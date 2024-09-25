@@ -1,0 +1,41 @@
+[{
+    "id":"1",
+    "name":"idly"
+    },
+    
+    {"id":"2",
+    "name":"poori"
+    },
+    
+    {"id":"3",
+    "name":"dosa"
+    },
+    {"id":"4",
+    "name":"masala dosa"
+    },
+    
+    {"id":"5",
+    "name":"plain dosa"
+    },
+    
+    {"id":"6",
+    "name":"ravva dosa"
+    },
+    
+    {"id":"7",
+    "name":"chapathi"
+    },
+    
+   { "id":"8",
+    "name":"parota"
+    },
+    
+    {"id":"9",
+    "name":"uthappam"
+    },
+    
+    {"id":"10",
+    "name":"onion dosa"
+    }
+    
+    ]
