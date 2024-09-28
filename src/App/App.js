@@ -8,6 +8,9 @@ import Cal from "../Components/cal";
 
 import Contact from "../Components/contact";
 import About from "../Components/about";
+import Annual from "../Components/annualleave";
+
+import Shopping from "../Components/shopping";
 
 import Stamp from "../Components/stamp";
 
@@ -43,8 +46,11 @@ function App() {
           <Route path="/stamp" element={<Stamp />} />
 
           <Route path="/terms" element={<Terms />} />
+          <Route path="/annual" element={<Annual />} />
 
           <Route path="/leave" element={<Leave />} />
+
+          <Route path="/shopping" element={<Shopping />} />
 
           <Route path="/privacy" element={<Privacy />} />
         </Routes>

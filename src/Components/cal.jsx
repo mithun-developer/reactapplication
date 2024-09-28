@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function Cal() {
   const [data, setData] = useState();
@@ -8,10 +10,17 @@ function Cal() {
     setData(e.target.value);
   };
 
+  let navigate = useNavigate();
+  const [auth, setauth] = useState(false);
+
+  if (auth) {
+    navigate("/");
+  }
+
   return (
     <div>
       <center>
-        <h3>Calulator</h3>
+        <h3>Pricing.</h3>
         <input type="text" value={data} name="input1" onChange={change} />{" "}
         <br />
         <br />
@@ -117,6 +126,16 @@ function Cal() {
         >
           clr
         </button>
+        <br />
+        <br />
+        <Button
+          onClick={() => {
+            setauth(true);
+          }}
+          as="input"
+          type="submit"
+          value="Back"
+        />{" "}
       </center>
     </div>
   );

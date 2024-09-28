@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import Button from "react-bootstrap/Button";
+
 function About() {
   const [data, setData] = useState([]);
 
@@ -23,7 +25,9 @@ function About() {
       <center>
         <h1>What we do</h1> <br />
         <br />
-        <button onClick={() => setAuth(true)}>Back</button>
+        <Button onClick={() => setAuth(true)} href="#">
+          Back
+        </Button>{" "}
       </center>
       {data.map((value) => (
         <li key={value.id}>{value.title}</li>

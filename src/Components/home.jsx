@@ -14,6 +14,7 @@ import { connect, useDispatch, useSelector } from "react-redux";
 
 function Home() {
   const { username } = useSelector((state) => state.app);
+
   let navigate = useNavigate;
   const [auth, setAuth] = useState(false);
 

@@ -8,6 +8,8 @@ import logo from "../images/pakricorn.png";
 
 import { useNavigate, Link } from "react-router-dom";
 
+import Button from "react-bootstrap/Button";
+
 function Stamp() {
   const initial = [
     {
@@ -103,10 +105,12 @@ function Stamp() {
 
   return (
     <div className="body">
-      <img src={logo} />
+      <div>
+        <img src={logo} />
+      </div>
       <form onSubmit={submit} className="content-wrap">
         <center>
-          <div style={{ display: "inline-flex" }}>
+          <div style={{ display: "inline-flex", fontFamily: "fantasy" }}>
             <h1>STAMP- </h1>
             <GetDateMonth />
 
@@ -126,7 +130,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day1"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day1}
                 onChange={(event) => change(index, event)}
                 placeholder="Sun"
@@ -134,7 +138,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day2"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day2}
                 onChange={(event) => change(index, event)}
                 placeholder="Mon"
@@ -142,7 +146,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day3"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day3}
                 onChange={(event) => change(index, event)}
                 placeholder="Tue"
@@ -150,7 +154,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day4"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day4}
                 onChange={(event) => change(index, event)}
                 placeholder="Wed"
@@ -158,7 +162,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day5"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day5}
                 onChange={(event) => change(index, event)}
                 placeholder="Thu"
@@ -166,7 +170,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day6"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day6}
                 onChange={(event) => change(index, event)}
                 placeholder="Fri"
@@ -174,7 +178,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day7"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day7}
                 onChange={(event) => change(index, event)}
                 placeholder="Sat"
@@ -182,7 +186,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day8"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day8}
                 onChange={(event) => change(index, event)}
                 placeholder="Sun"
@@ -190,7 +194,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day9"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day9}
                 onChange={(event) => change(index, event)}
                 placeholder="Mon"
@@ -198,7 +202,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day10"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day10}
                 onChange={(event) => change(index, event)}
                 placeholder="Tue"
@@ -206,7 +210,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day11"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day11}
                 onChange={(event) => change(index, event)}
                 placeholder="Wed"
@@ -214,7 +218,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day12"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day12}
                 onChange={(event) => change(index, event)}
                 placeholder="Thu"
@@ -222,7 +226,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day13"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day13}
                 onChange={(event) => change(index, event)}
                 placeholder="Fri"
@@ -230,7 +234,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day14"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day14}
                 onChange={(event) => change(index, event)}
                 placeholder="Sat"
@@ -238,7 +242,7 @@ function Stamp() {
               <input
                 type="number"
                 name="day15"
-                style={{ width: 50 }}
+                style={{ width: 60 }}
                 value={val.day15}
                 onChange={(event) => change(index, event)}
                 placeholder="Sun"
@@ -263,26 +267,36 @@ function Stamp() {
           ))}
           <br />
           <br />
-          <button onClick={() => setAuth(true)}>Back</button>{" "}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              setData(initial);
-            }}
-          >
-            Clear
-          </button>{" "}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              save();
-            }}
-          >
-            Save
-          </button>{" "}
+
           <br />
           <br />
-          <button>Submit</button>
+
+          <>
+            <Button onClick={() => setAuth(true)} href="#">
+              Back
+            </Button>{" "}
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                setData(initial);
+              }}
+              type="submit"
+            >
+              Reset
+            </Button>{" "}
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                save();
+              }}
+              as="input"
+              type="reset"
+              value="Save"
+            />{" "}
+            <br />
+            <br />
+            <Button as="input" type="submit" value="Submit" />{" "}
+          </>
         </center>
       </form>
       <Footer />
@@ -319,7 +333,7 @@ function Footer() {
   return (
     <div className="main-footer">
       <div className="container">
-        <div className="row" style={{ display: "flex" }}>
+        <div className="col" style={{ display: "flex", fontFamily: "fantasy" }}>
           {/*column1*/}
           <div className="col">
             <h4>PAKRICORN USA</h4>
@@ -339,7 +353,7 @@ function Footer() {
             </ul>
           </div>
           {/*column3*/}
-          <div className="row">
+          <div className="col">
             <h4>PAKRICORN AUS</h4>
             <ul className="list-unstyled" type="none">
               <li>61-285-564551</li>
@@ -349,7 +363,7 @@ function Footer() {
           </div>
 
           {/*column4*/}
-          <div className="row">
+          <div className="col">
             <h4>PAKRICORN FRANCE</h4>
             <ul className="list-unstyled" type="none">
               <li>33-285-952584</li>
@@ -359,7 +373,7 @@ function Footer() {
           </div>
 
           {/*column5*/}
-          <div className="row">
+          <div className="col">
             <h4>PAKRICORN MALAYSIA</h4>
             <ul className="list-unstyled" type="none">
               <li>60-534-647885</li>
@@ -369,7 +383,7 @@ function Footer() {
           </div>
 
           {/*column6*/}
-          <div className="row">
+          <div className="col">
             <h4>PAKRICORN SINGAPORE</h4>
             <ul className="list-unstyled" type="none">
               <li>60-205-505001</li>

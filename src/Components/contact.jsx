@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+import Button from "react-bootstrap/Button";
+
+import emailjs from "emailjs-com";
+
 function Contact() {
   const [data, setData] = useState({
     country: "",
@@ -21,6 +25,20 @@ function Contact() {
       country: e.target.value,
       sta: e.target.value,
     });
+  };
+
+  const submit = (e) => {
+    // e.preventdefault();
+    emailjs
+      .sendForm("service_2byxpaw", "template_v0k6o6e", "", "lRBAM5VQn3wzQ8IkN")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -52,9 +70,15 @@ function Contact() {
           <br />
           <br />
           <textarea style={{ height: 200, width: 400 }}></textarea> <br />
-          <button>Submit</button> <br />
-          <br />
-          <button onClick={() => setauth(true)}>Back</button>
+          <Button
+            as="input"
+            type="submit"
+            value="Submit"
+            onClick={submit}
+          />{" "}
+          <Button onClick={() => setauth(true)} href="#">
+            Back
+          </Button>{" "}
         </center>
       </form>
     </div>

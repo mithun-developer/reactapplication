@@ -3,6 +3,8 @@ import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
 
+import Button from "react-bootstrap/Button";
+
 function Reg() {
   const [data, setData] = useState({
     username: "",
@@ -91,9 +93,10 @@ function Reg() {
           {password != confirmpassword ? (
             <p style={{ color: "red" }}>passwords are not same</p>
           ) : null}
-          <button>Submit</button>
-          <br /> <br />
-          <button onClick={() => setAuth(true)}>Back</button>
+          <Button as="input" type="submit" value="Submit" />{" "}
+          <Button onClick={() => setAuth(true)} href="#">
+            Back
+          </Button>{" "}
         </center>
       </form>
     </div>

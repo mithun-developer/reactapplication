@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { connect, useDispatch } from "react-redux";
 
 import { useNavigate, Link } from "react-router-dom";
-import { getuser } from "./action";
+import { getuser } from "../Components/action";
+
+import { Navbar, Container, Nav } from "react-bootstrap";
+
+import { Button } from "react-bootstrap";
 
 function Login() {
   const dispatch = useDispatch();
@@ -47,7 +51,22 @@ function Login() {
       <marquee style={{ color: "red" }}>
         This site is under development. Please visit after some time
       </marquee>
-      <Link to="/registration" style={{ float: "right" }}>
+      <Navbar bg="primary" variant="dark">
+        <Container style={{ marginLeft: "0rem" }}>
+          <Nav className="me-auto">
+            <Nav.Link style={{ float: "right" }} href="/leave">
+              Apply Leave
+            </Nav.Link>
+            <Nav.Link href="/stamp">Stamp</Nav.Link>
+            <Nav.Link href="/cal">Pricing</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/contact">Contact us</Nav.Link>
+            <Nav.Link href="/registration">Register</Nav.Link>
+            <Nav.Link href="/shopping">Shopping</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      {/* <Link to="/registration" style={{ float: "right" }}>
         Register
       </Link>{" "}
       <Link to="/contact" style={{ float: "right" }}>
@@ -62,10 +81,10 @@ function Login() {
       </Link>
       <Link to="/leave" style={{ float: "right" }}>
         Apply Leave |
-      </Link>
+      </Link> */}
       <form onSubmit={submit}>
         <center>
-          <h1>Test Application</h1>
+          <h1 style={{ fontFamily: "fantasy" }}>Test Application</h1>
           <input
             name="username"
             type="text"
@@ -83,16 +102,18 @@ function Login() {
           />{" "}
           <br />
           <br />
-          <button
+          <Button
             onClick={() => {
               setAuth(true);
               dispatch(getuser(username));
             }}
-          >
-            Login
-          </button>
+            as="input"
+            type="submit"
+            value="Login"
+          />{" "}
         </center>
       </form>
+      <></>
     </div>
   );
 }
